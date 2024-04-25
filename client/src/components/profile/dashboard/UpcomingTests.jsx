@@ -23,7 +23,7 @@ export default function UpcomingTests() {
     retrieve();
   }, [])
   return <div>
-    <h2>Upcoming Tests</h2>
+     <h2 className="mb-4 text-blue-500">Upcoming Tests</h2>
     {loading && <Loader />}
     {error && <Error message={error} />}
     {tests.tests && tests.tests.map((test, index) => <TestInfo key={test._id} test={test} index={index} />)}

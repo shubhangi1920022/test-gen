@@ -39,19 +39,29 @@ export default function Results() {
 
   return <div>
 
-    <div className="relative bg-[#F5F0E5] border-2 p-2 text-[#A1824A] rounded-xl">
+    <div className="relative bg-[#4169E1] p-2 rounded text-[#fffff]">
       <label htmlFor="search">
-        <MagnifyingGlassIcon className="icon-lg absolute top-1/2 translate-y-[-50%] left-3" />
+        <MagnifyingGlassIcon className="icon-lg absolute top-1/2 translate-y-[-50%] left-3 text-white" />
       </label>
-      <input type="text" id="search" className="w-full bg-transparent pl-8" placeholder="search for test" onChange={e => handleSearch(e.target.value)} />
+      <input 
+  type="text" 
+  id="search" 
+  className="w-full bg-transparent pl-8 text-white" 
+  placeholder="Search for Test" 
+  onChange={e => handleSearch(e.target.value)} 
+/>
+
     </div>
 
     {error && <Error message={error} setter={setError} />}
 
-    {tests.length === 0 && <h1 className="text-center mt-10">You have given no tests</h1>}
+    {tests.length === 0 && <h1 className="text-center mt-5 py-3 bg-[#f8d7da]">You have given no tests</h1>}
 
     <div className="flex flex-wrap gap-4 mt-10 justify-eenly">
-      {displayedTests.length > 0 && displayedTests.map(test => (<div key={test._id} className="bg-[#f5f0e5] grow p-4 rounded-lg w-full md:w-[49%] sm:max-w-[350px]">
+      {displayedTests.length > 0 && displayedTests.map(test => (<div key={test._id} className="bg-transparent grow shadow-lg w-full md:w-[49%] sm:max-w-[350px] rounded-lg p-6 ring-2 ring-[#cccccc]">
+
+      {/* className="bg-transparent grow shadow-lg rounded-lg p-6 ring-2 ring-[#d9f2ff]" */}
+
         <NavLink to={`/results/${test.testId._id}`}>
           <h3>{test?.testId?.title}</h3>
         </NavLink>

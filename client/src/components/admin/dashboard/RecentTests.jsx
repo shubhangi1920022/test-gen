@@ -40,20 +40,19 @@ export default function RecentTests() {
   }, [])
 
   return <div>
-    <div className="relative bg-[#F5F0E5] border-2 p-2 text-[#A1824A] rounded-xl">
-      <label htmlFor="search">
-        <MagnifyingGlassIcon className="icon-lg absolute top-1/2 translate-y-[-50%] left-3" />
-      </label>
-      <input type="text" id="search" className="w-full bg-transparent pl-8" placeholder="search for test" onChange={e => handleSearch(e.target.value)} />
-    </div>
-    <h2 className="mt-8">Recently generated</h2>
+    <h2 className="mt-2 relative mb-10">
+  Recently generated
+  <div className="absolute left-0 w-20 h-2 bg-blue-500 rounded-md rounded-tr-md mt-2"></div></h2>
+
+  <p className="mb-3">Welcome to our <span className="text-blue-500 font-bold">Test Generator Platform</span>! Our timeline is designed to motivate you and keep you on track toward exam success. Stay focused, follow the deadlines, and prepare to excel in your exams.Let's get you ready to ace your exams with confidence!</p>
+  
     {loading && <Loader />}
     {error && <Error message="this is a error message" setter={setError} />}
 
     {displayedTests.map((test, index) => <div key={test._id} className="flex items-center justify-between">
       <TestInfo test={test} index={index} />
       <NavLink to={`/admin/dashboard/test/${test._id}/details`}>
-        <button className="bg-[#F5F0E5] text-[14px] rounded-3xl">View Details</button>
+        <button className="bg-[#4169E1] text-[14px] rounded text-white">View Details</button>
       </NavLink>
     </div>)}
 

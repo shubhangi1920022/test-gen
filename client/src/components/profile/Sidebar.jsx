@@ -1,50 +1,43 @@
 import { NavLink } from "react-router-dom";
-
 import { PresentationChartLineIcon, ClipboardDocumentListIcon, ChartBarIcon, Bars2Icon, XMarkIcon } from "@heroicons/react/24/outline";
-
 import UserInfo from "./UserInfo";
 import { useState } from "react";
 
 export default function Sidebar() {
-  const [isToggled, SetisToggled] = useState(false);
+  const [isToggled, setIsToggled] = useState(false);
 
   function toggleSidebar() {
-    SetisToggled(prev => !prev)
+    setIsToggled(prev => !prev);
   }
 
-  return <>
-    <aside className={`fixed ${isToggled ? "left-0" : "left-[-100%]"} top-0 bg-white duration-700 lg:sticky w-72 lg:min-w-72 p-4 h-[98vh] flex flex-col z-20 border-2`}>
-      <UserInfo />
+  return (
+    <>
+      <aside className={`fixed ${isToggled ? "left-0" : "-left-full"} top-0 bg-white duration-700 lg:sticky w-72 lg:min-w-72 p-4 h-[98vh] flex flex-col z-20 border-r-4 shadow-md`}>
+        <div className="p-6">
+          <UserInfo />
+        </div>
 
-      <div className="mt-10">
-        <NavLink to="/" className="flex items-start gap-2 p-2 mb-2">
-          <PresentationChartLineIcon className="icon-lg" />
-          <span className="text-[16px]">Dashboard</span>
+        <hr className="border-t-1 border-gray-300 mb-2 mt-2" />
+
+        <NavLink to="/" className="flex items-start gap-2 p-2">
+          <PresentationChartLineIcon className="w-6 h-6" />
+          <span className="text-base">Dashboard</span>
         </NavLink>
 
-        <NavLink to="/tests/Technical" className="flex items-start gap-2 p-2 mb-2">
-          <ClipboardDocumentListIcon className="icon-lg" />
-          <span className="text-[16px]">Tests</span>
+        <NavLink to="/tests/Technical" className="flex items-start gap-2 p-2">
+          <ClipboardDocumentListIcon className="w-6 h-6" />
+          <span className="text-base">Tests</span>
         </NavLink>
 
         <NavLink to="/results" className="flex items-start gap-2 p-2">
-          <ChartBarIcon className="icon-lg" />
-          <span className="text-[16px]">Results</span>
+          <ChartBarIcon className="w-6 h-6" />
+          <span className="text-base">Results</span>
         </NavLink>
-      </div>
+      </aside>
 
-      {/* <button className="mt-auto flex items-start gap-2 p-2" onClick={handleLogout}>
-        <span>
-          <ArrowLeftStartOnRectangleIcon className="icon-lg" />
-        </span>
-        <span>Log Out</span>
-      </button> */}
-
-    </aside>
-
-    <button className="bg-[#F5F0E5] fixed right-4 top-4 p-3 aspect-square lg:hidden z-20 rounded-3xl" onClick={toggleSidebar}>
-      {!isToggled && <Bars2Icon className="icon-lg" />}
-      {isToggled && <XMarkIcon className="icon-lg" />}
-    </button>
-  </>
+      <button className="bg-[#F5F0E5] fixed right-4 top-4 p-3 aspect-square lg:hidden z-20 rounded-full" onClick={toggleSidebar}>
+        {!isToggled ? <Bars2Icon className="w-6 h-6" /> : <XMarkIcon className="w-6 h-6" />}
+      </button>
+    </>
+  );
 }

@@ -17,7 +17,7 @@ export default function ModalEndExam({ children, message }) {
       <h2>{message}</h2>
       {loading && <Loader />}
       {children}
-      <button className="bg-red-600 text-white mt-8 mx-4 rounded-lg" onClick={handleSubmit}>Submit</button>
+      <button className="bg-[#2196F3] text-white mt-8 mx-4 rounded-lg" onClick={handleSubmit}>Submit</button>
     </div>
   </div>
 }

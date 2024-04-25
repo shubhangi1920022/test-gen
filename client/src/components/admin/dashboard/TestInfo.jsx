@@ -1,6 +1,9 @@
 export default function TestInfo({ test, index }) {
-  return <div className="my-8">
-    <p className="leading-3 font-semibold">{index + 1}&#41; {test.title}</p>
-    {/* <span className="text-slate-400 text-[12px]">A practice test for the SAT Math section</span> */}
+  return <div className="my-5">
+    <p className="leading-3"><span className="inline-block bg-[#4169E1] text-white font-semibold px-2 py-2 rounded mr-2">
+      {index + 1}
+    </span> {test.title}</p>
+
   </div>
+  
 }

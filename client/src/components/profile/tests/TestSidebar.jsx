@@ -17,9 +17,10 @@ export default function TestSidebar() {
   }
 
   return <>
-    <aside className={`bg-white w-96 md:min-w-[400px] fixed ${isToggled ? "left-0" : "left-[-100%]"} top-0 md:static md:w-96 md:h-auto border-r-2 py-20 shadow-lg`}>
+    <aside className={`bg-[#D9EDF7] w-96 md:min-w-[400px] fixed ${isToggled ? "left-0" : "left-[-100%]"} top-0 md:static md:w-96 md:h-auto border-r-2 py-20 shadow-lg`}>
 
-      <h1 className="text-center mb-10">Questions</h1>
+      <h1 className="text-center mb-10">Questions </h1>
+      
 
       <div className="text-[20px] text-center font-semibold flex flex-wrap gap-4 px-4">
         {questions?.map((question, index) => <button

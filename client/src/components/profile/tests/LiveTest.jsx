@@ -31,19 +31,21 @@ export default function LiveTest() {
 
   return <>
     {!isStarted && !isFetched && <div className='max-w-[800px] mx-auto h-screen px-4'>
-      <h1 className='text-center grow my-10'>Do You Want to Start the Test ?</h1>
+      <h1 className='text-center grow my-10 text-blue-600'>Do You Want to Start the Test ?</h1>
       {/* <h2>Instructions</h2> */}
       <div className="bg-gray-100 p-8 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold mb-4">Instructions</h2>
+        <h2 className="text-2xl font-bold mb-4 text-blue-600">Instructions</h2>
         <p className="text-lg mb-4">Before you begin the test, please read the following instructions carefully:</p>
         <ul className="list-disc pl-4">
-          <li className="mb-2">Ensure that you have a stable internet connection.</li>
-          <li className="mb-2">Find a quiet environment to minimize distractions.</li>
-          <li className="mb-2">Complete each question to the best of your ability.</li>
-          <li className="mb-2">Do not refresh the page while taking the test.</li>
+          <li className="mb-2">This test comprises of multiple-choice questions.</li>
+          <li className="mb-2">Each question will have only one of the available options as the correct answer.</li>
+          <li className="mb-2">You are advised not to close the browser window before submitting the test.</li>
+          <li className="mb-2">In case, if the test does not load completely or becomes unresponsive, click on browser's refresh button to reload.</li>
+          <li className="mb-2">1 mark(s) will be awarded for each correct answer.</li>
+          <li className="mb-2">No marks will be deducted for un-attempted questions</li>
         </ul>
       </div>
-      <button className='block mx-auto bg-green-500 text-white mt-10 rounded-lg shadow-md shadow-green-500 border-2' onClick={handleStartTest}>Start Test</button>
+      <button className='block mx-auto bg-[#4CAF50] text-white mt-10 rounded-lg shadow-md shadow-green-500 border-2' onClick={handleStartTest}>Start Test</button>
     </div>}
 
     {isFetched && !isAvailable && <h1 className='text-center mt-[30vh]'>Test is not available right now 🙂</h1>}

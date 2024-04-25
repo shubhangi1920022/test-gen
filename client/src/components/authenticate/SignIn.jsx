@@ -21,7 +21,7 @@ export default function SignIn() {
   }
 
   return (
-    <div>
+    <div className="border border-gray-300 shadow-md p-6 rounded-md">
       <form onSubmit={signIn}>
         <label htmlFor="username" className={labelStyles}>Email</label>
         <input type="text" id="username" placeholder="email" className={inputStyles} />
@@ -36,11 +36,13 @@ export default function SignIn() {
 
         <ForgotLink url="user" />
         {error && <Error message={error} setter={setError} />}
-        <button type="submit" className="btn-primary w-full mt-4 rounded-md">Sign in</button>
+        <button type="submit" className="w-full mt-4 rounded-md bg-blue-900 text-white py-2 px-4 hover:bg-blue-800 focus:outline-none focus:bg-blue-800">
+  Sign in
+</button>
       </form>
-      <div className="text-slate-400 font-semibold text-center mt-4">or</div>
+      <div className="text-slate-400 font-semibold text-center mt-2">or</div>
       <Link to="/user/sign-up">
-        <button className="btn-primary w-full mt-4 rounded-md">Sign up</button>
+      <button type="submit" className="w-full rounded-md">Don't Have an Account? <span style={{ color: '#003366' }}>Register</span></button>
       </Link>
     </div >
   )

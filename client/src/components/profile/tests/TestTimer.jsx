@@ -26,9 +26,13 @@ export default function TestTimer({ setter }) {
 
   return <div>
     <div className="my-2">
-      <ProgressBar completed={(((testDuration - minutes) / testDuration) * 100).toFixed(2) + " %"} />
+    <ProgressBar completed={(((testDuration - minutes) / testDuration) * 100).toFixed(2) + " %"} className="bg-green-500" />
+
     </div>
-    <p className="font-bold text-[20px]">{minutes} : {seconds} remaining</p>
+    <p className="text-1xl text-white bg-blue-500 p-2 inline-block rounded">Section Time: {minutes}:{seconds} </p>
+
+
+
   </div>
 }
 

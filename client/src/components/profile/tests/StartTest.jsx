@@ -25,7 +25,7 @@ export default function StartTest() {
     </table>
 
     <NavLink to="/tests/1/test-live">
-      <button className="btn-tertiary mt-8">Start Test</button>
+      <button className="bg-[#4CAF50] mt-8">Start Test</button>
     </NavLink>
   </div>
 };
