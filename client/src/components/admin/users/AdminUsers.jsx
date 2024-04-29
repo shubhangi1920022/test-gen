@@ -48,20 +48,26 @@ export default function AdminUsers() {
   }, [])
 
   return <div>
-    <div className="relative bg-[#F5F0E5] border-2 p-2 text-[#A1824A] rounded-xl mb-4">
-      <label htmlFor="search">
-        <MagnifyingGlassIcon className="icon-lg absolute top-1/2 translate-y-[-50%] left-3" />
-      </label>
-      <input type="text" id="search" className="w-full bg-transparent pl-8" placeholder="search for users" onChange={e => handleSearch(e.target.value)} />
-    </div>
+    <div className="relative bg-blue-500 p-2 rounded text-white">
+        <label htmlFor="search">
+          <MagnifyingGlassIcon className="icon-lg absolute top-1/2 transform -translate-y-1/2 left-3 text-white" />
+        </label>
+        <input 
+          type="text" 
+          id="search" 
+          className="w-full bg-transparent pl-8 text-white" 
+          placeholder="Search for Test" 
+          onChange={e => handleSearch(e.target.value)} 
+        />
+      </div>
 
 
     <div className="border-2 rounded-xl mt-4">
-      <h1 className="p-4">Users</h1>
+      {/* <h1 className="p-4">Users</h1> */}
       {loading && <Loader />}
       {error && <Error message={error} setter={setError} />}
       <div className="overflow-x-auto">
-        <div className="font-bold flex items-center justify-start border-t-2 p-4">
+        <div className="font-bold flex items-center justify-start border-t-2 p-4 bg-[#f2f2f2] text-[#333333]">
           <p className="min-w-40 px-4">Name</p>
           {/* <p className="min-w-40 px-4">Username</p> */}
           <p className="w-72 px-4 min-w-40">Email</p>
@@ -75,7 +81,7 @@ export default function AdminUsers() {
           </div>
         </div>
         {displayedUsers?.map(user =>
-          <div key={user._id} className="flex items-center justify-start border-t-2 p-4">
+          <div key={user._id} className="flex items-center justify-start border-t-2 p-4 bg-[#f9f9f9] text-[#333333]">
             <p className="min-w-40 px-4">{user.name}</p>
             {/* <p className="min-w-40 px-4">john</p> */}
             <p className="w-72 px-4 ">{user.email}</p>

@@ -24,15 +24,21 @@ export default function Sidebar() {
           <span className="text-base">Dashboard</span>
         </NavLink>
 
+        <hr className="border-t-1 border-gray-300 mb-2 mt-2" />
+
         <NavLink to="/tests/Technical" className="flex items-start gap-2 p-2">
           <ClipboardDocumentListIcon className="w-6 h-6" />
           <span className="text-base">Tests</span>
         </NavLink>
 
+        <hr className="border-t-1 border-gray-300 mb-2 mt-2" />
+
         <NavLink to="/results" className="flex items-start gap-2 p-2">
           <ChartBarIcon className="w-6 h-6" />
           <span className="text-base">Results</span>
         </NavLink>
+
+        <hr className="border-t-1 border-gray-300 mb-2 mt-2" />
       </aside>
 
       <button className="bg-[#F5F0E5] fixed right-4 top-4 p-3 aspect-square lg:hidden z-20 rounded-full" onClick={toggleSidebar}>

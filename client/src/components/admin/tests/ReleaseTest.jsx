@@ -55,7 +55,7 @@ export default function ReleaseTest() {
   }, [loadingTest])
 
   return <div>
-    <div className="rounded-2xl border-2 mt-6">
+    <div className="rounded border-2 mt-6">
       <h3 className="p-4">Release Tests</h3>
       {loading && <Loader />}
       {error && <Error message={error} setter={setError} />}
@@ -64,19 +64,19 @@ export default function ReleaseTest() {
           className="md:flex md:items-center gap-4 px-4 py-4 border-t-2"
         >
           <p>{test.title}</p>
-          <button className="bg-[#F5F0E5] rounded-3xl mt-4 md:mt-0 md:ml-auto">{test.questions.length} Questions</button>
+          <button className="bg-[#F5F0E5] rounded mt-4 md:mt-0 md:ml-auto">{test.questions.length} Questions</button>
 
           <Link to={`/admin/tests/edit-test/${test._id}`}>
-            <button className="btn-primary rounded-3xl mx-2">Edit</button>
+            <button className="btn-primary rounded mx-2">Edit</button>
           </Link>
 
           <button
-            className="bg-red-500 text-white rounded-3xl mx-2"
+            className="bg-red-500 text-white rounded mx-2"
             onClick={() => deleteTest(test._id)}
           >Delete</button>
           <button
             disabled={test.isReleased}
-            className={`${test.isReleased ? "bg-blue-300" : "bg-blue-500"} text-white rounded-3xl mx-2`}
+            className={`${test.isReleased ? "bg-blue-300" : "bg-blue-500"} text-white rounded mx-2`}
             onClick={() => handleReleaseTest(test._id)}
           >{test.isReleased ? "Already Released" : "Release Now"}</button>
         </div>

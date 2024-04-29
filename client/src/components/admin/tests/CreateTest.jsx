@@ -64,7 +64,7 @@ export default function CreateTest() {
   }
 
   return <div>
-    <div className="md:w-[512px] mx-4 md:mx-auto mt-10">
+    <div className="md:w-[512px] mx-4 md:mx-auto mt-10 p-4 shadow-md rounded px-4">
       <form onSubmit={handleForm} className="h-[75vh] overflow-y-auto">
         <span>
 
@@ -142,15 +142,15 @@ export default function CreateTest() {
         />
         <select value={domain} onChange={e => setDomain(e.target.value)} className={inputStyles}>
           <option value="Technical">Technical</option>
-          <option value="Non Technical">Non Technical</option>
+          <option value="Non-Technical">Non Technical</option>
         </select>
-        <button type="button" className="bg-[#dedede] block ml-auto mb-4 rounded-3xl" onClick={addQuestion}>Add Question</button>
+        <button type="button" className="bg-[#dedede] block ml-auto mb-4 rounded" onClick={addQuestion}>Add Question</button>
         {isCreated && <div className="py-4 px-4 text-white bg-green-500 my-8 flex justify-between">
           Test created successfully
           <XMarkIcon className="w-6 cursor-pointer" onClick={() => setIsCreated(false)} />
         </div>}
         {error && <Error message={error} setter={setError} />}
-        <button className="btn-primary text-white block ml-auto rounded-3xl" type="submit">Create Test</button>
+        <button className="btn-primary text-white block ml-auto rounded" type="submit">Create Test</button>
       </form>
     </div>
   </div>

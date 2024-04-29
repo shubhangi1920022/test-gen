@@ -24,18 +24,15 @@ export default function TestTimer({ setter }) {
     }
   }, [minutes]);
 
-  return <div>
-    <div className="my-2">
-    <ProgressBar completed={(((testDuration - minutes) / testDuration) * 100).toFixed(2) + " %"} className="bg-green-500" />
-
+  return (
+    <div>
+      <div className="my-2">
+        <ProgressBar
+          completed={(((testDuration - minutes) / testDuration) * 100).toFixed(2) + " %"}
+           // Change the color here
+        />
+      </div>
+      <p className="text-1xl text-white bg-blue-500 p-2 inline-block rounded">Section Time: {minutes}:{seconds} </p>
     </div>
-    <p className="text-1xl text-white bg-blue-500 p-2 inline-block rounded">Section Time: {minutes}:{seconds} </p>
-
-
-
-  </div>
+  );
 }
-
-/**
-2. The browser should take completed size of the screen (fulscreen mode), user is not able to switch to minimizedd screen
- */

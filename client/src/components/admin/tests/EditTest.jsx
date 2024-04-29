@@ -87,7 +87,7 @@ export default function EditTest() {
           <span role="button" className="absolute text-2xl right-6 top-1/2 translate-y-[-50%]" onClick={() => setSuccess("")}>x</span>
         </div>}
         <button
-          className="btn-primary text-white block ml-auto rounded-3xl"
+          className="btn-primary text-white block ml-auto rounded"
           type="submit"
         >Update Test</button>
       </form>

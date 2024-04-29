@@ -9,7 +9,7 @@ export default function UserInfo() {
     <img src={user} className="w-15 h-12 object-cover" />
     <div>
       <h3 className="leading-5 text-xl font-semibold">{name}</h3>
-      <h3 className="leading-5 text-xl font-semibold">{email}</h3>
+      {/* <h3 className="leading-5 text-1xl font-semibold mt-2">{email}</h3> */}
     </div>
   </div>
 }

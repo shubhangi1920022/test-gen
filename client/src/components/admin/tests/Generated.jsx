@@ -13,7 +13,7 @@ export default function Generated() {
     {[0, 1, 2].map(test => <div key={test} className="flex items-center justify-between">
       <TestInfo />
       <NavLink to="/admin/dashboard/test/1/details">
-        <button className="bg-[#F5F0E5] text-[14px] rounded-3xl">View Details</button>
+        <button className="bg-[#F5F0E5] text-[14px] rounded">View Details</button>
       </NavLink>
     </div>)}
   </div>
