@@ -12,7 +12,7 @@ export default function Nav({ isLoggedIn }) {
   }
 
   return <div>
-    <nav className="flex gap-2 items-center p-4 border-2">
+    <nav className="flex gap-2 items-center p-4 border-2" id="nav">
       <Link to="/" className="flex items-center gap-4">
         <img src={logo} className="w-10 h-10 objecct-cover" />
         <h1 >Test Generator</h1>
